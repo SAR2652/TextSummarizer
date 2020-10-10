@@ -1,0 +1,19 @@
+{% extends "Summarizer/base.html" %}
+
+{% block title %} Summarizer Home Page {% endblock %}
+
+{% block body_block %}
+<div class="jumbotron text-center">
+    <p>
+        <form action="{% url 'Summarizer:summarize' %}" method="POST">
+            {% csrf_token %}
+            <div class="container">
+                <label for="Text">Text: </label>
+                <input type="textarea" name="text" placeholder="Enter your text">
+            </div>
+            <br>
+            <input type="submit" class="btn btn-primary" name="" value="Submit">
+        </form>
+    </p>
+</div>
+{% endblock %}
